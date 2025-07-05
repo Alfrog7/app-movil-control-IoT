@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -65,4 +66,9 @@ dependencies {
     // Herramientas de depuración
     debugImplementation("androidx.compose.ui:ui-tooling:1.3.3")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.3.3")
+
+    // Bill of Materials (BOM) – mantiene todas las libs de Firebase alineadas
+    implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
+    // Realtime Database + KTX
+    implementation("com.google.firebase:firebase-database-ktx")
 }
